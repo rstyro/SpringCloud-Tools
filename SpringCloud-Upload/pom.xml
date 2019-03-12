@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>top.lrshuai</groupId>
-    <artifactId>upload</artifactId>
+    <artifactId>SpringCloud-Upload</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>SpringCloud-Upload</name>
     <description>文件上传</description>

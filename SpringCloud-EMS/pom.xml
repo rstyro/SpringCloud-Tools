@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>top.lrshuai</groupId>
-        <artifactId>tools</artifactId>
+        <artifactId>SpringCloud-Tools</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>ems</artifactId>
+    <artifactId>SpringCloud-EMS</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>SpringCloud-EMS</name>
     <description>快递物流查询</description>

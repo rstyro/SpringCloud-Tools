@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>top.lrshuai</groupId>
-        <artifactId>tools</artifactId>
+        <artifactId>SpringCloud-Tools</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>email</artifactId>
+    <artifactId>SpringCloud-Email</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>SpringCloud-Email</name>
     <description>发送邮件</description>

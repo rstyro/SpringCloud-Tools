@@ -3,10 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>top.lrshuai</groupId>
-    <artifactId>tools</artifactId>
+    <artifactId>SpringCloud-Tools</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>Tools</name>
+    <name>SpringCloud-Tools</name>
     <description>一个SpringCloud 项目工具类</description>
 
     <parent>
