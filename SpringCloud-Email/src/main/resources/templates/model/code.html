@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证码</title>
+    <style>
+        .bg{
+            width: 500px;
+            margin: 0px auto;
+        }
+        .inline{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+<div class="bg">
+    <div> 亲爱的 <h3 class="inline" th:text="${username}">帅大叔</h3>，你本次收到的验证码为：<h2 class="inline" th:text="${code}">123456</h2></div>
+    <div><img src="https://rstyro.github.io/blog/about/index/subscrbe_qrcode.jpg"/></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+server:
+    port: 5001
+
+spring:
+    thymeleaf:
+        mode: LEGACYHTML5
+        encoding: UTF-8
+        cache: false
+        servlet:
+            content-type: text/html
+        prefix: classpath:/templates/
+    mail:
+        default-encoding: UTF-8
+        port: 465
+        host: smtp.qq.com
+        username: 1006059906@qq.com
+        password: jhcyazlccaewbefd
+        properties:
+            mail:
+                smtp:
+                    starttls:
+                        enable: true
+                        required: true
+                    auth: true
+                    socketFactory:
+                        port: 465
+                        fallback: false
+                        class: javax.net.ssl.SSLSocketFactory
+
+mail:
+  from: 1006059906@qq.com
