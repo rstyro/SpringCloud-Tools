@@ -48,6 +48,7 @@ public class EmailService implements IEmailService {
 
     @Override
     public Result sendTemplate(SendEmailDTO dto) throws Exception {
+        System.out.println("dto="+dto);
         check(dto.getToAddress());
         mailService.sendTemplate(dto.getToAddress(), UUID.randomUUID().toString().replace("-",""));
         return Result.ok();

@@ -1,0 +1,24 @@
+server:
+  port: 5000
+
+spring:
+  application:
+    name: register-component
+  security:
+    user:
+      name: rstyro
+      password: rstyropwd
+
+#  在默认设置下，该服务注册中心也会将自己作为客户端来尝试注册它自己，所以我们需要禁用它的客户端注册行为，
+# 设置eureka.client.register-with-eureka=false 与 eureka.client.fetch-registry=false
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://rstyro:rstyropwd@${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    enable-self-preservation: false       # 设为false，关闭自我保护
+    eviction-interval-timer-in-ms: 4000   # 清理间隔（单位毫秒，默认是60*1000）

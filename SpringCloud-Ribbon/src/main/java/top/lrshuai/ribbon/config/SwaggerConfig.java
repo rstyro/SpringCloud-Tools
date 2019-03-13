@@ -1,4 +1,4 @@
-package top.lrshuai.email.config;
+package top.lrshuai.ribbon.config;
 
 
 import org.springframework.context.annotation.Bean;
@@ -6,10 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import springfox.documentation.builders.ApiInfoBuilder;
-import springfox.documentation.builders.ParameterBuilder;
-import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.schema.ModelRef;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Parameter;
 import springfox.documentation.spi.DocumentationType;
@@ -24,24 +21,17 @@ import java.util.List;
 public class SwaggerConfig implements WebMvcConfigurer {
     @Bean
     public Docket ProductApi() {
-        //可以添加多个header或参数
-        ParameterBuilder aParameterBuilder = new ParameterBuilder();
-        aParameterBuilder.parameterType("header") //参数类型支持header, cookie, body, query etc
-                .name("token") //参数名
-                .defaultValue("") //默认值
-                .description("用户token")
-                .modelRef(new ModelRef("string"))//指定参数值的类型
-                .required(false).build(); //非必需，这里是全局配置，然而在登陆的时候是不用验证的
         List<Parameter> aParameters = new ArrayList<Parameter>();
-        aParameters.add(aParameterBuilder.build());
         return new Docket(DocumentationType.SWAGGER_2).apiInfo(productApiInfo())
                 .groupName("v1").select()
-                .apis(RequestHandlerSelectors.basePackage("top.lrshuai")).paths(PathSelectors.ant("/mail/**")).build().globalOperationParameters(aParameters);
+                .apis(RequestHandlerSelectors.basePackage("top.lrshuai"))
+//                .paths(PathSelectors.ant("/mail/**"))
+                .build().globalOperationParameters(aParameters);
     }
 
     private ApiInfo productApiInfo() {
         ApiInfo apiInfo = new ApiInfoBuilder()
-                .title("发送邮件接口文档")
+                .title("接口文档")
                 .version("1.0.0")
                 .build();
         return apiInfo;

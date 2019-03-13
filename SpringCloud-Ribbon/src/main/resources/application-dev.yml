@@ -1,0 +1,29 @@
+server:
+    port: 5005
+
+spring:
+    application:
+        name: consumer-ribbon
+    security:
+        user:
+            name: rstyro
+            password: rstyropwd
+
+# rureka config
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://rstyro:rstyropwd@localhost:5000/eureka
+    instance:
+        # 是否注册IP到eureka server，如不指定或设为false，那就会注册主机名到eureka server
+        prefer-ip-address: true
+        hostname: localhost
+
+# 为/health 端点配置显示详情
+management:
+    endpoint:
+        health:
+            # 是否展示健康检查详情
+            show-details: always
+
+

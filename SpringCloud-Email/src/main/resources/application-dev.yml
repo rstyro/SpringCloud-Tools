@@ -2,6 +2,8 @@ server:
     port: 5001
 
 spring:
+    application:
+        name: email
     thymeleaf:
         mode: LEGACYHTML5
         encoding: UTF-8
@@ -26,6 +28,32 @@ spring:
                         port: 465
                         fallback: false
                         class: javax.net.ssl.SSLSocketFactory
+    security:
+        user:
+            name: rstyro
+            password: rstyropwd
 
 mail:
   from: 1006059906@qq.com
+
+# rureka config
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://rstyro:rstyropwd@localhost:5000/eureka
+        healthcheck:
+            enabled: true # 开启健康检查（需要spring-boot-starter-actuator依赖）
+    instance:
+        prefer-ip-address: true
+        hostname: localhost
+        lease-renewal-interval-in-seconds: 10     # 续约更新时间间隔（默认30秒）
+        lease-expiration-duration-in-seconds: 30    # 续约到期时间（默认90秒）
+
+
+
+# 为/health 端点配置显示详情
+management:
+    endpoint:
+        health:
+            # 是否展示健康检查详情
+            show-details: always
