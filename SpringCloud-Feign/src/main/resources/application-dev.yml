@@ -1,0 +1,40 @@
+server:
+    port: 5009
+
+# 文件上传限制
+spring:
+    application:
+        name: feign-service
+    security:
+        user:
+            name: rstyro
+            password: rstyropwd
+
+# 这个是为了 HmacSHA256 加密用的
+encrypt:
+    key: 1e72cbb84be248548c2512601c1adb2f
+    secret: e85c75ad63bc45569308dd4464e6c3e6
+
+# rureka config
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://rstyro:rstyropwd@localhost:5000/eureka
+        healthcheck:
+            enabled: true # 开启健康检查（需要spring-boot-starter-actuator依赖）
+    instance:
+        prefer-ip-address: true
+        hostname: localhost
+        lease-renewal-interval-in-seconds: 10     # 续约更新时间间隔（默认30秒）
+        lease-expiration-duration-in-seconds: 30    # 续约到期时间（默认90秒）
+
+# 为/health 端点配置显示详情
+management:
+    endpoint:
+        health:
+            # 是否展示健康检查详情
+            show-details: always
+# feign 日志
+logging:
+    level:
+        top.lrshuai.feign.client.SmsFeignClient: debug

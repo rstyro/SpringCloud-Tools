@@ -28,6 +28,7 @@ public enum ApiResultEnum {
 
 	//权限
 	AUTH_NOT_HAVE(30001,"没有权限"),
+	AUTH_SIGN_NOT_MATCH(30002,"签名不匹配"),
 
 
 
