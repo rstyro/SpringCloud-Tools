@@ -32,6 +32,7 @@ public enum ApiResultEnum {
 
 
 	FILE_IS_NULL(40001,"文件为空"),
+	FILE_NOT_PIC(40002,"不是图片类型文件"),
 
 	TASK_IS_RUNING(50001,"任务已启动，无法再起启动"),
 	TASK_IS_PAUSE(50002,"任务暂停，只可继续执行"),

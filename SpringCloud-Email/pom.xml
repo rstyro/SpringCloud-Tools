@@ -34,7 +34,7 @@
 
         <dependency>
             <groupId>top.lrshuai</groupId>
-            <artifactId>common</artifactId>
+            <artifactId>SpringCloud-Common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

@@ -1,5 +1,6 @@
 server:
     port: 5005
+    max-http-header-size: 2048KB
 
 spring:
     application:

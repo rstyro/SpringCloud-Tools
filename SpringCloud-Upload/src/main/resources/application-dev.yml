@@ -1,0 +1,59 @@
+server:
+    port: 5006
+    max-http-header-size: 2048KB
+
+
+# 图片上传配置
+upload:
+    # 本地上传配置
+    localhost:
+        folder: upload
+        url: http://localhost:5006/show
+    # oss 图片上传 配置
+    oss:
+        aliyun:
+            url: http://trcprd.oss-cn-hongkong.aliyuncs.com
+            endpoint: http://oss-cn-hongkong.aliyuncs.com/
+            keyId: LTrAIMluXd6PdsaAxL
+            secret: 9KWsopQOADf17Cp5nZHz4pbp5yGh9H
+            backetName: trcprd
+            folder: pictures
+        aws:
+            bucket: devop
+            access_key_id: AKIrAJCLPOMILLVZs7PBKQ
+            secret_access_key: KKEcyENVy+I7nWIZwfLQ9gkIPZ4MEgtbgMLZc7jz
+            url: http://devop.s3.ap-southeast-1.amazonaws.com
+
+
+# 文件上传限制
+spring:
+    servlet:
+        multipart:
+            max-file-size: 10MB
+            max-request-size: 100MB
+    application:
+        name: upload-imgage-service
+    security:
+        user:
+            name: rstyro
+            password: rstyropwd
+
+# rureka config
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://rstyro:rstyropwd@localhost:5000/eureka
+        healthcheck:
+            enabled: true # 开启健康检查（需要spring-boot-starter-actuator依赖）
+    instance:
+        prefer-ip-address: true
+        hostname: localhost
+        lease-renewal-interval-in-seconds: 10     # 续约更新时间间隔（默认30秒）
+        lease-expiration-duration-in-seconds: 30    # 续约到期时间（默认90秒）
+
+# 为/health 端点配置显示详情
+management:
+    endpoint:
+        health:
+            # 是否展示健康检查详情
+            show-details: always
