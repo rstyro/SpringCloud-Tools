@@ -11,6 +11,7 @@ import top.lrshuai.feign.config.AuthFeignConfig;
 public interface SmsFeignClient {
 
     /**
+     * https://github.com/OpenFeign/feign  可以看例子
      * 发送短信
      * @param dto
      * @return
