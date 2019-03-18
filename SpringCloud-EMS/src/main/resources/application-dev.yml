@@ -1,0 +1,43 @@
+server:
+    port: 5010
+
+# 文件上传限制
+spring:
+    application:
+        name: ems-service
+    security:
+        user:
+            name: rstyro
+            password: rstyropwd
+
+# rureka config
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://rstyro:rstyropwd@localhost:5000/eureka
+        healthcheck:
+            enabled: true # 开启健康检查（需要spring-boot-starter-actuator依赖）
+    instance:
+        prefer-ip-address: true
+        hostname: localhost
+        lease-renewal-interval-in-seconds: 10     # 续约更新时间间隔（默认30秒）
+        lease-expiration-duration-in-seconds: 30    # 续约到期时间（默认90秒）
+
+# 为/health 端点配置显示详情
+management:
+    endpoint:
+        health:
+            # 是否展示健康检查详情
+            show-details: always
+
+
+# ems 的配置， 快递鸟的 账号自己去申请，阿里市场，那个可以用100 次，估计不剩几次了，可以自己去申请
+ems:
+    kdniao:
+        # 用户ID，和 appKey
+        id: 1452513
+        appKey: 9748ar704-0cea-4bc3-a93d-9ffe16sd044cb
+        url: http://api.kdniao.com/Ebusiness/EbusinessOrderHandle.aspx
+    market:
+        appCode: 4d897804e81f40988ed710bb7546964b
+        host: https://i18n.market.alicloudapi.com

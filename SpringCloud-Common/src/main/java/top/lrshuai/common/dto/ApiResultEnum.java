@@ -38,6 +38,9 @@ public enum ApiResultEnum {
 	TASK_IS_RUNING(50001,"任务已启动，无法再起启动"),
 	TASK_IS_PAUSE(50002,"任务暂停，只可继续执行"),
 	TASK_NOT_RUNING(50003,"任务未执行，无法暂停"),
+
+
+	EMS_CODE_NOT_FOUND(60000,"物流编号找不到，请填写物流编号"),
 	;
 
 	private int status;
