@@ -31,3 +31,7 @@
 感觉也没啥技术含量，就是 `ribbon` 和 `feign` 调用服务的一些例子，全局异常捕获啥的。
 每个模块都是用 `Swagger-ui` 进行测试
 
+
+## 快速开始
+
+先启动 `SpringCloud-Eureka`、然后再启动其他服务,然后打开Swagger-ui 接口页面即可
